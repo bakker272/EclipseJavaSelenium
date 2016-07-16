@@ -2,7 +2,9 @@ package Utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
 
 public class SuiteBase {
 	public WebDriver driver;
@@ -16,6 +18,7 @@ public void setupTest()
 @AfterTest
 public void tearownTest()
 {
+	driver.close();
 	driver.quit();
 	
 }
